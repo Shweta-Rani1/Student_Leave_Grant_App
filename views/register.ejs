@@ -1,0 +1,340 @@
+<% include ./partial/header %>
+<div class="body" 
+style="background:black;   height: 100%;
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+height: 100vh;
+width: 100vw;"
+>
+
+  <div class="lop"style="border:1px solid pink;">
+    <% if (locals.errors) { %>
+      <div class="alert alert-danger" role="alert"style="">
+        <% locals.errors.forEach(function(errors) { %>
+        <h5><%= errors.msg %></h5>
+
+        <% }); %>
+      </div>
+      <% } %>
+</div>
+<div
+
+  class="container"
+  style=" 
+  position: relative;
+border-radius: 5px;
+background-color: #29313c;
+padding: 60px 0 30px 0;
+width: 40%;
+
+
+max-width: 700px;
+width: 100%;
+background: #29313c;
+padding: 25px 30px;
+border-radius: 5px;
+
+"
+
+>
+
+        
+
+        <form action="/student/register" method="POST" style="margin: 0 auto; top:4em ;position:relative;">
+          <div class="row">
+            <div class="col">
+              <h2 style="    text-align: center;
+               font-weight:500;
+               position: relative;
+               font-size:23px;
+               color:rgb(255, 255, 255);
+               bottom:1.2em;
+              ">
+                REGISTRATION
+              </h2>
+             <div class="user_details">
+              <div class="form-group form-inline">
+                <label for="name" style="width: 200px;
+                display: inline-block;
+                text-align: right;
+                color:#e4e0e0;
+                "></label>
+                  <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  placeholder="Name"
+                  name="name"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+
+  
+ 
+                  "
+                />
+              </div>
+              <!-- type -->
+              <div id="rates" class="form-group"style="width: 400px;color:#e4e0e0;
+              display: flex;
+              text-align: right;
+              ">
+                <input type="radio" id="r1" name="type" value="student" />
+                Student
+                <input type="radio" id="r2" name="type" value="hod" />
+                HOD
+                <input type="radio" id="r3" name="type" value="warden" />
+                Warden
+              </div>
+
+              <!-- id -->
+              <div class="form-group form-inline">
+                  <label for="username" style="width: 200px;color:#e4e0e0;
+                  display: inline-block;
+                  text-align: right;
+                  "></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="username"
+                  
+                  placeholder="Username"
+                  name="username"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+  
+ 
+                  "
+                />
+              </div>
+              <!-- password -->
+              <div class="form-group form-inline">
+                  <label for="password"style="width: 200px;color:#e4e0e0;
+                  display: inline-block;
+                  text-align: right;
+                  "></label>
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+  
+ 
+                  "
+                />
+              </div>
+              <!-- confirm password -->
+              <div class="form-group form-inline">
+                  <label for="cpassword"style="width: 200px;color:#e4e0e0;
+                  display: inline-block;
+                  text-align: right;
+                  "></label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="cpassword"
+                  name="password2"
+                  placeholder="Confirm password"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+                  "
+                />
+              </div>
+              <!-- Department -->
+              <div class="form-group form-inline">
+                  <label for="department"style="width: 200px;color:#e4e0e0;
+                  display: inline-block;
+                  text-align: right;
+                  "></label>
+                <!-- <label for="department">Department</label> -->
+                <!-- <input
+                  class="form-control"
+                  
+                  type="text"
+                  placeholder="Department"
+                  id="department"
+                  name="department"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+                  "
+                /> -->
+                <select  class="form-control"
+                  placeholder="Department"
+                type="text"
+                id="department"
+                name="department"
+                style=" position:relative;
+                width:100%;
+                padding: 10px 0;
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid #999;
+                outline:none;
+                color:#fff;
+                font-size: 1em;
+                letter-spacing: 0.15em;">
+
+                  <option style="color: #999 " value="" disabled selected hidden>Department</option>
+                  <option style="color: black " value="IT">IT</option>
+                  <option style="color: black " value="CSE">CSE</option>
+                  <option style="color: black " value="ECE">ECE</option>
+                  <option style="color: black " value="EE">EE</option>
+                </select>
+              </div>
+              <!-- hostel -->
+              <div class="form-group form-inline">
+                  <!-- <label for="hostel"style="width: 200px;color:#e4e0e0;
+                  display: inline-block;
+                  text-align: right;
+                  ">Hostel :</label> -->
+                <!-- <label for="hostel">Hostel</label> -->
+                <input
+                  class="form-control"
+                  type="text"
+                  name="hostel"
+                  id="hostel"
+                  placeholder="Hostel"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+                  "
+                />
+              </div>
+              <!-- image -->
+              <div class="form-group form-inline">
+                  <label for="img"style="width: 200px;color:#e4e0e0;
+                  display: inline-block;
+                  text-align: right;
+                  "></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="img"
+                  placeholder="Img url"
+                  name="image"
+                  style=" position:relative;
+                  width:100%;
+                  padding: 10px 0;
+                  background: transparent;
+                  border: none;
+                  border-bottom: 2px solid #999;
+                  outline:none;
+                  color:#fff;
+                  font-size: 1em;
+                  letter-spacing: 0.15em;
+      
+                  "
+                />
+              </div>
+
+              <div class="form-group"
+              style=" height:45px; margin: 45px 0;color:#999;">
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary btn-default btn-block"
+                  style=" 
+                  left:8rem;
+                  position:relative;
+                  height:100%;
+                  width: 60%;
+                  outline: none;
+                  border: none;
+                  color:#fff;
+                  font-size: 18px;
+                  font-weight: 500;
+                  border-radius: 25px;
+                  letter-spacing: 1px;
+                  background: #3c00a0;
+                  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), 0, inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+
+                  "
+                >
+                  Register
+                </button>
+              </div>
+            </div>
+                
+             </div>
+          </div>
+          <!-- name -->
+        </form>
+
+        <a href="/" style="width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 20px;
+        text-decoration: none;">Back</a>
+      </div>
+    </div>
+  </div>
+  <% include ./partial/footer %>
+</div>
+
+
+</div>

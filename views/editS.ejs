@@ -1,0 +1,144 @@
+<% include ./partial/header %>
+<div
+class="body" 
+style="background:black;   height: 100%;
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+height: 100vh;
+width: 100vw;"
+>
+
+  <div
+  class="container"
+  style="   position: relative;
+  border-radius: 5px;
+  background-color: #29313c;
+  padding: 60px 0 30px 0;
+  width: 40%;
+  
+  
+  max-width: 700px;
+  width: 100%;
+  background: #29313c;
+  padding: 25px 30px;
+  border-radius: 5px;
+"
+>
+
+    
+    
+      <form action="/student/<%=student._id%>?_method=PUT" method="POST" style="margin-top: 20px;">
+        <div class="row">
+          <div class="col">
+              <h1 style=" text-align: center;
+              font-weight:600;
+              position: relative;
+              font-size:31px;
+              color:rgb(255, 255, 255);
+              bottom:1.2em;">Edit Profile <%= student.name%></h1>
+              <div class=" form-group form-inline">
+                  <label for="name"  style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  color:#e4e0e0;
+                  ">Name :</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="name"
+                    value="<%= student.name%>"
+                    name="student[name]"
+                  />
+                </div>
+                <div class=" form-group form-inline">
+                    <label for="username" style="width: 200px;
+                    display: inline-block;
+                    text-align: right;
+                    color:#e4e0e0;
+                    ">Username :</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="username"
+                    value="<%= student.username%>"
+                    name="student[username]"
+                  />
+                </div>
+                <div class=" form-group form-inline">
+                    <label for="department"  style="width: 200px;
+                    display: inline-block;
+                    text-align: right;
+                    color:#e4e0e0;
+                    ">Department :</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="department"
+                    value="<%= student.department%>"
+                    name="student[department]"
+                  />
+                </div>
+                <div class=" form-group form-inline">
+                    <label for="hostel"  style="width: 200px;
+                    display: inline-block;
+                    text-align: right;
+                    color:#e4e0e0;
+                    ">Hostel :</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="hostel"
+                    value="<%= student.hostel%>"
+                    name="student[hostel]"
+                  />
+                </div>
+                <div class=" form-group form-inline">
+                    <label for="url"  style="width: 200px;
+                    display: inline-block;
+                    text-align: right;
+                    color:#e4e0e0;
+                    ">Image-url :</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="url"
+                    value="<%= student.image%>"
+                    name="student[image]"
+                  />
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-lg btn-default btn-block"
+                  style=" 
+                  left:8rem;
+                  position:relative;
+                  height:100%;
+                  width: 60%;
+                  outline: none;
+                  border: none;
+                  color:#fff;
+                  font-size: 18px;
+                  font-weight: 500;
+                  border-radius: 25px;
+                  letter-spacing: 1px;
+                  background: #3c00a0;
+                  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), 0, inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+
+                  ">Submit</button>
+                </div>
+          </div>
+        </div>
+        
+      </form>
+      <a href="/student/<%= student.id%>">Back</a>
+    </div>
+  </div>
+</div>
+
+</div>
+<% include ./partial/footer %>
